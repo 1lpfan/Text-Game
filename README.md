@@ -1,3 +1,1 @@
-###############################
-#Bunker: A Text Based Adventure
-###############################
+Bunker: A Text Based Adventure
