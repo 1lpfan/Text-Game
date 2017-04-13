@@ -13,14 +13,13 @@ def display_title():
     print('******Bunker: A Text Based Adventure******')
     print('------------------------------------------')
 
-    # Wait 3 seconds
-    time.sleep(3)
 def player_name():
     '''
     Asks the player for their name and stores it as variable player 
     ''' 
     player = raw_input('What is your name? >')
-    time.sleep(1)
+    print('Welcome, '+player)
+
 
 def intro():
     '''
