@@ -5,6 +5,8 @@
 import random
 import time
 
+player_hp = 100
+
 def display_title():
     '''
     Displays Game title
@@ -31,3 +33,21 @@ def intro():
     print('The nuclear war decimated Earth, leaving only pockets of survivors.')
     time.sleep(5)
     print('Today is the day you will leave the safety of your bunker because your supplies are dangerously low.')
+    
+def attack(weapon_damage, enemy_hp):
+    '''
+    Defines the parameters of basic combat.
+    weapon_damage is the max hp damage the weapon can deal.
+    enemy_hp is the hp value of the enemy.
+    '''
+    damage = random.randint(1,weapon_damage)
+    enemy_hp = enemy_hp - damage
+    time.sleep(.5)
+    if enemy_hp <= 0:
+        print('Enemy defeated!')
+    else:
+        print('Enemy Hit Points: '+ str(enemy_hp)) 
+        
+
+
+
