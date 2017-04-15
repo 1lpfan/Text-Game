@@ -2,6 +2,7 @@
 #Story
 ######
 
+import time
 
 def display_title():
     '''
