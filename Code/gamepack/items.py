@@ -20,3 +20,28 @@ class Gold(Item):
         super().__init__(name="Gold",
                          description="A round coin with {} stamped on the front.".format(str(self.amt)),
                          value=self.amt)
+                         
+class Weapon(Item):
+    def __init__(self, name, description, value, damage):
+        self.damage = damage
+        super().__init__(name, description, value)
+ 
+    def __str__(self):
+        return "{}\n=====\n{}\nValue: {}\nDamage: {}".format(self.name, self.description, self.value, self.damage)
+ 
+ 
+class Bat(Weapon):
+    def __init__(self):
+        super().__init__(name="Baseball Bat",
+                         description="A standard pre-war baseball bat.",
+                         value=2,
+                         damage=5)
+ 
+ 
+class Dagger(Weapon):
+    def __init__(self):
+        super().__init__(name="Dagger",
+                         description="A small dagger with some rust. Somewhat more dangerous than a rock.",
+                         value=10,
+                         damage=10)
+                        
