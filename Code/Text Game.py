@@ -5,7 +5,7 @@
 import random
 import time
 import gamepack.story as story
-  
+import gamepack.items as items 
   
 def attack(weapon_damage, enemy_hp):
     '''
