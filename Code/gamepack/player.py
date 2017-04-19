@@ -2,7 +2,7 @@
 #Player
 #######
 
-import items
+import items, world
  
 class Player():
     def __init__(self):
