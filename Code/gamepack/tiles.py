@@ -48,10 +48,10 @@ class LootRoom(MapTile):
     def modify_player(self, player):
         self.add_loot(player)
 
-class EmptyCavePath(MapTile):
+class Desert(MapTile):
     def intro_text(self):
         return """
-        Another unremarkable part of the cave. You must forge onwards.
+        A desert wasteland
         """
  
     def modify_player(self, player):
