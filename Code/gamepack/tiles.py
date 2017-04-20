@@ -78,18 +78,23 @@ class Closet(LootRoom):
         super().__init__(x, y, items.Bat(), items.FirstAidKit())
     def intro_text(self):
         return '''
-        
+        Rummaging through your closet proves quite useful, as you find a baseball
+        bat and a first aid kit.
         '''
 
-class FindDaggerRoom(LootRoom):
+class FindSwordRoom(LootRoom):
     def __init__(self, x, y):
-        super().__init__(x, y, items.Dagger())
+        super().__init__(x, y, items.Sword())
  
     def intro_text(self):
         return """
-        Your notice something shiny in the corner.
-        It's a dagger! You pick it up.
+        You find a sword burried under the desert sand and pick it up.
         """
 
-
+class ExitRoom(MapTile):
+    def intro_text(self):
+        return '''
+        You open the sealed lead door and emerge from your bunker in a brutal
+        desert wasteland.
+        '''
 

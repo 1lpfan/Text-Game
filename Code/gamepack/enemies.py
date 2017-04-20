@@ -19,3 +19,7 @@ class Spider(Enemy):
 class Crab(Enemy):
     def __init__(self):
         super().__init__(name='Irradiated Crab', hp=30, damage=15)
+        
+class Iguana(Enemy):
+    def __init__(self):
+        super().__init__(name= 'Irradiated Iguana', hp=15, damage=5)

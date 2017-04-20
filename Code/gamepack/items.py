@@ -37,12 +37,12 @@ class Bat(Weapon):
                          damage=5)
  
  
-class Dagger(Weapon):
+class Sword(Weapon):
     def __init__(self):
-        super().__init__(name="Dagger",
-                         description="A small dagger with some rust. Somewhat more dangerous than a rock.",
+        super().__init__(name="Sword",
+                         description="An old, slightly rusted sword. More effective than a bat.",
                          value=10,
-                         damage=10)
+                         damage=20)
 
 class Aid(Item):
     def __init__(self, name, description, value, bonus):
