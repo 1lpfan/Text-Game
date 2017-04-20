@@ -75,7 +75,7 @@ class GiantSpiderRoom(EnemyRoom):
 
 class Closet(LootRoom):
     def __init__(self, x, y):
-        super().__init__(x, y, items.Bat())
+        super().__init__(x, y, items.Bat(), items.FirstAidKit())
     def intro_text(self):
         return '''
         
