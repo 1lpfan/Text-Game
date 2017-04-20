@@ -29,7 +29,6 @@ class Weapon(Item):
     def __str__(self):
         return "{}\n=====\n{}\nValue: {}\nDamage: {}".format(self.name, self.description, self.value, self.damage)
  
- 
 class Bat(Weapon):
     def __init__(self):
         super().__init__(name="Baseball Bat",
@@ -44,4 +43,16 @@ class Dagger(Weapon):
                          description="A small dagger with some rust. Somewhat more dangerous than a rock.",
                          value=10,
                          damage=10)
+
+class Aid(Item):
+    def __init__(self, name, description, value, bonus):
+        self.bonus = bonus
+        super().__init__(name, description, value)
+        
+    def __str__(self):
+        return "{}\n=====\n{}\nValue: {}\nDamage: {}".format(self.name, self.description, self.value, self.bonus)
+
+
+
+
                         

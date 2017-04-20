@@ -21,6 +21,7 @@ class StartingRoom(MapTile):
         You wake up within the safe haven of your shelter,
         knowing you must leave and search for a new air scrubber.
         You take a look around for any supplies you may need on your journey.
+        The exit door is straight ahead and your closet is to the right.
         '''
  
     def modify_player(self, player):
@@ -71,7 +72,15 @@ class GiantSpiderRoom(EnemyRoom):
             return """
             The corpse of a dead spider rots on the ground.
             """
- 
+
+class Closet(LootRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, items.Bat())
+    def intro_text(self):
+        return '''
+        
+        '''
+
 class FindDaggerRoom(LootRoom):
     def __init__(self, x, y):
         super().__init__(x, y, items.Dagger())
