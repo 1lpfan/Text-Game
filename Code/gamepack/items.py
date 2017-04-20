@@ -52,7 +52,12 @@ class Aid(Item):
     def __str__(self):
         return "{}\n=====\n{}\nValue: {}\nDamage: {}".format(self.name, self.description, self.value, self.bonus)
 
-
+class FirstAidKit(Aid):
+    def __init__(self):
+        super().__init__(name='First Aid Kit',
+                         description='A simple first aid kit to heal your wounds.',
+                         value=15,
+                         bonus=10)                             
 
 
                         
