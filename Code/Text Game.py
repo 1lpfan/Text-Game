@@ -2,10 +2,5 @@
 #Bunker: A Text Based Adventure
 ###############################
 
-import random
-import time
-import gamepack.story as story
-import gamepack.items as items 
-import gamepack.enemies as enemies
-  
-
+import gamepack.world as world
+from gamepack.player import Player as Player

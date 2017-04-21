@@ -55,6 +55,12 @@ class EnemyRoom(MapTile):
         if self.enemy.is_alive():
             the_player.hp = the_player.hp - self.enemy.damage
             print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, the_player.hp))
+            
+    def available_actions(self):
+        if self.enemy.is_alive():
+            return [actions.Flee(tile=self), actions.Attack(enemy=self.enemy)]
+        else:
+            return self.adjacent_moves()
       
 class LootRoom(MapTile):
     def __init__(self, x, y, item):
@@ -115,4 +121,11 @@ class ExitRoom(MapTile):
         You open the sealed lead door and emerge from your bunker in a brutal
         desert wasteland.
         '''
-
+class ScrubberRoom(MapTile):
+    def intro_text(self):
+        return '''
+        You have found the Air Scrubber! You return to the safety of your bunker
+        to breathe clean air once again.
+        '''
+    def modify_player(self, player):
+        player.victory = True
