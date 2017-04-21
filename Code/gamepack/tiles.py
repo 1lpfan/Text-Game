@@ -39,7 +39,7 @@ class StartingRoom(MapTile):
         You wake up within the safe haven of your shelter,
         knowing you must leave and search for a new air scrubber.
         You take a look around for any supplies you may need on your journey.
-        The exit door is straight ahead and your closet is to the right.
+        The exit door is straight ahead to the north and your closet is to the east.
         '''
  
     def modify_player(self, player):
@@ -121,11 +121,44 @@ class ExitRoom(MapTile):
         You open the sealed lead door and emerge from your bunker in a brutal
         desert wasteland.
         '''
-class ScrubberRoom(MapTile):
+class CaveRoom(MapTile):
     def intro_text(self):
         return '''
+        You enter the cave and see something shiny sitting on a rock.
         You have found the Air Scrubber! You return to the safety of your bunker
         to breathe clean air once again.
         '''
     def modify_player(self, player):
         player.victory = True
+
+class IguanaRoom(EnemyRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, enemies.Iguana())
+ 
+    def intro_text(self):
+        if self.enemy.is_alive():
+            return """
+            A giant irradiated Iguana blocks your path.
+            """
+        else:
+            return """
+            The corpse of a dead iguana lays lifeless on the ground.
+            """
+
+class CrabRoom(EnemyRoom):
+     def __init__(self, x, y):
+        super().__init__(x, y, enemies.Crab())
+ 
+     def intro_text(self):
+        if self.enemy.is_alive():
+            return """
+            A giant angry irradiated crab guards the enterance to a cave.
+            """
+        else:
+            return """
+            The lifeless body of a large crab lays on the ground.
+            """
+
+
+
+
