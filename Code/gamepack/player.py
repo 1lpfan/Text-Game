@@ -35,7 +35,21 @@ class Player():
     def move_west(self):
         self.move(dx=-1, dy=0)
         
-        
-        
+    def attack(self, enemy):
+        best_weapon = None
+        max_dmg = 0
+        for i in self.inventory:
+            if isinstance(i, items.Weapon):
+                if i.damage > max_dmg:
+                    max_dmg = i.damage
+                    best_weapon = i
+ 
+        print("You use {} against {}!".format(best_weapon.name, enemy.name))
+        enemy.hp -= best_weapon.damage
+        if not enemy.is_alive():
+            print("You killed {}!".format(enemy.name))
+        else:
+            print("{} HP is {}.".format(enemy.name, enemy.hp))
+            
         
         
