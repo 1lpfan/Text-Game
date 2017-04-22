@@ -55,9 +55,23 @@ class Player():
     def do_action(self, action, **kwargs):
         action_method = getattr(self, action.method.__name__)
         if action_method:
-            action_method(**kwargs)    
+            action_method(**kwargs)   
+             
     def flee(self, tile):
         """Moves the player randomly to an adjacent tile"""
         available_moves = tile.adjacent_moves()
         r = random.randint(0, len(available_moves) - 1)
         self.do_action(available_moves[r])
+        
+    def use_aid(self, aid):
+        '''Uses aid item to restore HP'''
+        best_aid = None
+        max_bonus = 0
+        for i in self.inventory:
+            if isinstance(i, items.Aid):
+                 if i.bonus > max_bonus:
+                     max_bonus = i.bonus
+                     best_aid = i
+        print('You use {} to gain {} HP.'.format(best_aid.name, best_aid.bonus))
+        self.hp += best_aid.bonus
+        print('Your HP is {}.'.format(self.hp))

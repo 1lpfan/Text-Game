@@ -47,3 +47,8 @@ class Attack(Action):
 class Flee(Action):
     def __init__(self, tile):
         super().__init__(method=Player.flee, name="Flee", hotkey='f', tile=tile)
+        
+class UseAid(Action):
+    '''Uses aid item to restore player HP'''
+    def __init__(self):
+        super().__init__(method=Player.use_aid, name='Use aid', hotkey='u')
