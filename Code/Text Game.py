@@ -20,7 +20,7 @@ def play():
             available_actions = room.available_actions()
             for action in available_actions:
                 print(action)
-            action_input = input('Action: ')
+            action_input = str(raw_input('Action: '))
             for action in available_actions:
                 if action_input == action.hotkey:
                     player.do_action(action, **action.kwargs)
