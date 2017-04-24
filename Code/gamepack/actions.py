@@ -2,7 +2,7 @@
 #Actions
 ########
 
-from player import Player
+import Player
  
  
 class Action():
