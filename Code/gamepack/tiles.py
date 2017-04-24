@@ -146,10 +146,10 @@ class IguanaRoom(EnemyRoom):
             """
 
 class CrabRoom(EnemyRoom):
-     def __init__(self, x, y):
+    def __init__(self, x, y):
         super().__init__(x, y, enemies.Crab())
  
-     def intro_text(self):
+    def intro_text(self):
         if self.enemy.is_alive():
             return """
             A giant angry irradiated crab guards the enterance to a cave.
