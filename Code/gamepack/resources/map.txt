@@ -1,6 +1,6 @@
 CaveRoom	CrabRoom	Desert	Desert
 	Desert	Desert	
-Desert	FindSwordRoom	Desert	Desert
+	FindSwordRoom	Desert	Desert
 Desert	Desert	IguanaRoom	Desert
-Desert	Desert	ExitRoom	
+Desert	SpiderRoom	ExitRoom	
 		StartingRoom	Closet

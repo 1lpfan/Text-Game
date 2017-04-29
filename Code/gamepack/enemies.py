@@ -13,12 +13,12 @@ class Enemy:
         
 class Spider(Enemy):
     def __init__(self):
-        super().__init__(name='Irradiated Spider', hp=10, damage=2)
+        super().__init__(name='Irradiated Spider', hp=10, damage=3)
  
  
 class Crab(Enemy):
     def __init__(self):
-        super().__init__(name='Irradiated Crab', hp=30, damage=15)
+        super().__init__(name='Irradiated Crab', hp=30, damage=20)
         
 class Iguana(Enemy):
     def __init__(self):

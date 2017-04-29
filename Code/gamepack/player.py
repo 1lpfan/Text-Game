@@ -8,7 +8,7 @@ import items, world
 class Player():
     def __init__(self):
         self.inventory = [items.Gold(15)]
-        self.hp = 100
+        self.hp = 50
         self.location_x, self.location_y = world.starting_position
         self.victory = False
  
@@ -46,7 +46,7 @@ class Player():
                     best_weapon = i
  
         print("You use {} against {}!".format(best_weapon.name, enemy.name))
-        enemy.hp -= best_weapon.damage
+        enemy.hp -= random.randint(1, best_weapon.damage)
         if not enemy.is_alive():
             print("You killed {}!".format(enemy.name))
         else:

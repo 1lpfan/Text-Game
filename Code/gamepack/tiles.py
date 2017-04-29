@@ -2,7 +2,7 @@
 #Tiles
 ######
 
-import items, enemies, actions, world
+import items, enemies, actions, world, random
  
 class MapTile:
     def __init__(self, x, y):
@@ -13,7 +13,7 @@ class MapTile:
         raise NotImplementedError()
  
     def modify_player(self, player):
-        raise NotImplementedError()
+        pass
     def adjacent_moves(self):
         """Returns all move actions for adjacent tiles."""
         moves = []
@@ -31,7 +31,6 @@ class MapTile:
         """Returns all of the available actions in this room."""
         moves = self.adjacent_moves()
         moves.append(actions.ViewInventory())
-    
         return moves
 class StartingRoom(MapTile):
     def intro_text(self):
@@ -53,8 +52,9 @@ class EnemyRoom(MapTile):
  
     def modify_player(self, the_player):
         if self.enemy.is_alive():
-            the_player.hp = the_player.hp - self.enemy.damage
-            print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, the_player.hp))
+            self.damage = random.randint(1, self.enemy.damage)
+            the_player.hp -= self.damage
+            print("Enemy does {} damage. You have {} HP remaining.".format(self.damage, the_player.hp))
             
     def available_actions(self):
         if self.enemy.is_alive():
@@ -63,12 +63,14 @@ class EnemyRoom(MapTile):
             return self.adjacent_moves()
       
 class LootRoom(MapTile):
-    def __init__(self, x, y, item):
+    def __init__(self, x, y, item, item2):
         self.item = item
+        self.item2 = item2
         super().__init__(x, y)
  
     def add_loot(self, player):
         player.inventory.append(self.item)
+        player.inventory.append(self.item2)
  
     def modify_player(self, player):
         self.add_loot(player)
@@ -83,7 +85,7 @@ class Desert(MapTile):
         #Room has no action on player
         pass
  
-class GiantSpiderRoom(EnemyRoom):
+class SpiderRoom(EnemyRoom):
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Spider())
  
@@ -108,7 +110,7 @@ class Closet(LootRoom):
 
 class FindSwordRoom(LootRoom):
     def __init__(self, x, y):
-        super().__init__(x, y, items.Sword())
+        super().__init__(x, y, items.Sword(), None)
  
     def intro_text(self):
         return """
@@ -121,6 +123,8 @@ class ExitRoom(MapTile):
         You open the sealed lead door and emerge from your bunker in a brutal
         desert wasteland.
         '''
+        def modify_player(self, player):
+            pass
 class CaveRoom(MapTile):
     def intro_text(self):
         return '''
