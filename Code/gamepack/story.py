@@ -19,10 +19,12 @@ def intro():
     print('The date is April 15, 2132')
     time.sleep(1)
     print('You entered the bunker exactly five years ago when the bombs began to fall.')
-    time.sleep(1)
+    time.sleep(2)
     print('The nuclear war decimated Earth, leaving only pockets of survivors.')
-    time.sleep(1)
+    time.sleep(2)
     print('The world you knew was transformed by the war into a barren desert wasteland.')
-    time.sleep(5)
+    time.sleep(3)
     print('Today is the day you will leave the safety of your bunker because your air scrubber is failing.')
+    print('Without a functioning air scrubber, your bunker is just as dangerous as the outside world.')
+    
     

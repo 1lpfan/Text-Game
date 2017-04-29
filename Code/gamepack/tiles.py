@@ -156,7 +156,8 @@ class CrabRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            A giant angry irradiated crab guards the enterance to a cave.
+            A giant angry irradiated crab guards the enterance to a cave
+            to the west.
             """
         else:
             return """

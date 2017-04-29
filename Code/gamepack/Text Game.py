@@ -2,8 +2,17 @@
 #Bunker: A Text Based Adventure
 ###############################
 
-import world
+import world, story, time
 from player import Player
+
+def intro():
+    '''
+    Displays the introduction for the game.
+    '''
+
+    story.display_title()
+    time.sleep(5)
+    story.intro()
 
 def play():
     world.load_tiles()
@@ -20,7 +29,7 @@ def play():
             available_actions = room.available_actions()
             for action in available_actions:
                 print(action)
-            action_input = input('Action: ')
+            action_input = input('--> ')
             for action in available_actions:
                 if action_input == action.hotkey:
                     player.do_action(action, **action.kwargs)
