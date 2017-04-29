@@ -14,7 +14,8 @@ def load_tiles():
     for y in range(len(rows)):
         cols = rows[y].split('\t')
         for x in range(x_max):
-            tile_name = cols[x].replace('\r\n', '') # Windows users may need to replace '\r\n'
+            tile_name = cols[x].replace('\n', '') # Windows users may need to replace '\r\n'
+            print(cols[x])
             if tile_name == 'StartingRoom':
                 global starting_position
                 starting_position = (x, y)
