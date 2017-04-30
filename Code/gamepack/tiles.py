@@ -54,8 +54,10 @@ class EnemyRoom(MapTile):
         if self.enemy.is_alive():
             self.damage = random.randint(1, self.enemy.damage)
             the_player.hp -= self.damage
-            print("Enemy does {} damage. You have {} HP remaining.".format(self.damage, the_player.hp))
-            
+            if the_player.hp > 0:  
+                print("Enemy does {} damage. You have {} HP remaining.".format(self.damage, the_player.hp))
+            else:
+                print('You have died!')
     def available_actions(self):
         if self.enemy.is_alive():
             return [actions.Flee(tile=self), actions.Attack(enemy=self.enemy)]

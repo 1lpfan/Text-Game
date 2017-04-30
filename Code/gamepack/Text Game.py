@@ -34,3 +34,23 @@ def play():
                 if action_input == action.hotkey:
                     player.do_action(action, **action.kwargs)
                     break
+def bunker():
+    '''
+    Plays the game Bunker.
+    '''
+    intro()
+    print('Type b and press Enter to begin Bunker. Type e and press Enter to exit.')
+    while True:
+        
+        ready = input('-->')
+        if ready == 'b':
+            break
+        elif ready == 'e':
+            print('Goodbye.')
+            return
+        else:
+            print('Type b and press Enter to begin Bunker. Type e and press Enter to exit.')
+
+    play()
+if __name__ == "__main__":
+    bunker()   

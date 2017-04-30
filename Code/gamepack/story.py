@@ -22,9 +22,10 @@ def intro():
     time.sleep(2)
     print('The nuclear war decimated Earth, leaving only pockets of survivors.')
     time.sleep(2)
-    print('The world you knew was transformed by the war into a barren desert wasteland.')
+    print('The world you knew was transformed by the war into a barren desert wasteland inhabited by dangerous creatures.')
     time.sleep(3)
     print('Today is the day you will leave the safety of your bunker because your air scrubber is failing.')
+    time.sleep(2)
     print('Without a functioning air scrubber, your bunker is just as dangerous as the outside world.')
     
     
